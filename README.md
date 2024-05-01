@@ -1,2 +1,2 @@
 # PagoNxtApiTests
-Repositório destinado ao desafio técnico.
+Repositório destinado a desafio técnico.
