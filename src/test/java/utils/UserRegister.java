@@ -13,13 +13,4 @@ public class UserRegister {
 
         return user;
     }
-    public CreatePojo Usuario(){
-
-        CreatePojo user = new CreatePojo();
-
-        user.setName("Ianne");
-        user.setJob("");
-
-        return user;
-    }
 }
