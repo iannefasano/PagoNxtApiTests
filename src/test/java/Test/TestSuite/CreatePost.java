@@ -36,4 +36,39 @@ public class CreatePost extends PathConfig {
                 .log()
                 .all();
     }
+    @Test
+    @DisplayName("Validar campos obrigatórios")
+    public void testRequiredFields() {
+        given()
+                .contentType(ContentType.JSON)
+                .body(user)
+        .when()
+                .post(path+"/users")
+
+        .then()
+                .assertThat()
+                .contentType(ContentType.JSON)
+                .statusCode(HttpStatus.SC_BAD_REQUEST)
+                .body(matchesJsonSchemaInClasspath("Contracts/CreatePost.json"))
+                .log()
+                .all();
+    }
+    @Test
+    @DisplayName("Validação do contrato")
+    public void testContract() {
+        given()
+                .contentType(ContentType.JSON)
+                .body(user)
+        .when()
+                .post(path+"/users")
+
+        .then()
+                .assertThat()
+                .contentType(ContentType.JSON)
+                .statusCode(HttpStatus.SC_BAD_REQUEST)
+                .body(matchesJsonSchemaInClasspath("Contracts/CreatePost.json"))
+                .log()
+                .all();
+    }
+
 }
