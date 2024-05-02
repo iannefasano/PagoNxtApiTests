@@ -20,7 +20,7 @@ public class CreatePost extends PathConfig {
         user = new UserRegister().fillUser();
     }
     @Test
-    @DisplayName("Validar que o metodo post retorna status code 201")
+    @DisplayName("Validar que o metodo Post retorna status code 201")
     public void testCreatePost() {
         given()
                 .contentType(ContentType.JSON)
